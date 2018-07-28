@@ -11,7 +11,7 @@ class Gci
 
 			when "ch"
 				@s = GC.stat
-				[200, [], s[:malloc_increase].to_s+"|"+s[:oldmalloc_increase]]
+				[200, [], [s[:malloc_increase].to_s+"|"+s[:oldmalloc_increase]]]
 
 			when "gen1"
 				GC.start(full_mark:false)
