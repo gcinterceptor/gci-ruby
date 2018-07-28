@@ -4,25 +4,22 @@ class Gci
 		GC.disable	
 	end	
 
-	def call(env)
-		case env["gci"]	
-			when nil
-				@app.call env
-
+	def call env
+		case env["HTTP_GCI"]
 			when "ch"
 				@s = GC.stat
-				[200, [], [s[:malloc_increase].to_s+"|"+s[:oldmalloc_increase]]]
+				[200, {}, [@s[:malloc_increase_bytes].to_s+"|"+@s[:oldmalloc_increase_bytes].to_s]]
 
 			when "gen1"
 				GC.start(full_mark:false)
-				head 200
+				[200, {}, []]
 
 			when "gen2"
 				GC.start(full_mark:true)
-				head 200
+				[200, {}, []]
 
 			else
-				head 400
+				@app.call env
 		end  
 	end
 end
