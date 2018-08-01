@@ -13,5 +13,5 @@ load when necessary -- and the ii) the Request Processor(RP), a thin layer which
 usually implemented as a framework middleware. The latter is responsible for checking the heap allocation and performing
 a garbage collection.
 
-This repository implements a GCI Request Processor for [Rack](https://rack.github.io/) services. This can be used
+This repository implements a GCI Request Processor for [Rack](https://rack.github.io/) services. This middleware can be used
 in rails application (example [here](https://github.com/gcinterceptor/msgpush-ruby)).
