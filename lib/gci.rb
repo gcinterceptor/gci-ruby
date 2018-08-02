@@ -18,11 +18,15 @@ class Gci
 				[200, {}, [gen1.to_s+"|"+gen2.to_s]]
 
 			when "gen1"
+				GC.enable
 				GC.start(full_mark:false)
+				GC.disable
 				[200, {}, []]
 
 			when "gen2"
+				GC.enable
 				GC.start(full_mark:true)
+				GC.disable
 				[200, {}, []]
 
 			else
