@@ -19,7 +19,11 @@ class Gci
 
 			when "gen1"
 				GC.enable
-				GC.start(full_mark:false)
+				if ENV.fetch('ONLY_FULL'){'false'} == 'true'
+					GC.start(full_mark:true)
+				else
+					GC.start(full_mark:false)
+				end
 				GC.disable
 				[200, {}, []]
 
