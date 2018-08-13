@@ -15,3 +15,7 @@ a garbage collection.
 
 This repository implements a GCI Request Processor for [Rack](https://rack.github.io/) services. This middleware can be used
 in rails application (example [here](https://github.com/gcinterceptor/msgpush-ruby)).
+
+Related Articles/Posts:
+
+* [Try next door, I’m busy cleaning](https://medium.com/@danielfireman/try-next-door-im-busy-cleaning-fc585a819fd1)
